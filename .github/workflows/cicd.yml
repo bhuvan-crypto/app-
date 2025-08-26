@@ -34,6 +34,7 @@ jobs:
       - name: Run Docker Container
         run: |
           docker run -d \
+            --restart=always \
             -p 4000:4000 \
             --name nodejs-app-container \
             -e MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }} \
